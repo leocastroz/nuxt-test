@@ -1,0 +1,8 @@
+h1 {
+  background-image: url('https://cdn.kibrispdr.org/data/1755/animated-sound-wave-gif-39.gif');
+  background-position: center ;
+  background-size: cover;
+  background-clip: content-box;
+  -webkit-mask-image: linear-gradient(to top, transparent 20%, black 90%);
+  height: 200px;
+}
