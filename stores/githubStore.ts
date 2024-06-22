@@ -17,7 +17,7 @@ export const useGithubStore = defineStore('github', {
       const headers = getApiHeaders()
 
       try {
-        const response = await axios.get(`https://api.github.com/orgs/solution-guides/repos`, { headers })
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}`, { headers })
         this.userData = response.data
         console.log('UserData:', this.userData)
       } catch (error) {

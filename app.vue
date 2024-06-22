@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <Home />
     <NuxtPage />
     <Footer />
     <!-- <p @mouseover="isHovered = true" @mouseleave="isHovered = false" style="color: #fff;">teste hover</p>
@@ -17,6 +18,7 @@
 import { ref } from 'vue'
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
+import Home from '~/components/Home.vue'
 
 const isHovered = ref(false)
 </script>

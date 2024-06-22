@@ -1,3 +1,4 @@
+
 <template>
   <div class="container">
     <!-- <button @click="fetchUserData">Fetch GitHub User Data</button> -->
@@ -12,7 +13,12 @@
         </div>
       </div>
     </div>
-    <NuxtPage />
+    <nav>
+      <NuxtLink to="/about">About</NuxtLink>
+      <NuxtLink to="/contact">Contact</NuxtLink>
+      <NuxtLink to="/user/123">User 123</NuxtLink>
+      <NuxtLink to="/profile">profile</NuxtLink>
+    </nav>
   </div>
 </template>
 

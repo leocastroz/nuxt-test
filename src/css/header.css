@@ -1,8 +1,15 @@
-h1 {
+header {
   background-image: url('https://cdn.kibrispdr.org/data/1755/animated-sound-wave-gif-39.gif');
   background-position: center ;
   background-size: cover;
   background-clip: content-box;
   -webkit-mask-image: linear-gradient(to top, transparent 20%, black 90%);
-  height: 200px;
+  height: 300px;
+}
+
+.develop-by-header {
+  background-color: #000;
+  color: #ffffff48;
+  text-align: center;
+  padding: 10px 0;
 }

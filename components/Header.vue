@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>My Nuxt App</h1>
+    <div class="develop-by-header">developer by Leonardo Castro</div>
   </header>
 </template>
 
