@@ -61,7 +61,36 @@ watchEffect(() => {
 }
 </style> -->
 <template>
-  <div>
-    teste
+  <div class="container" style="color:red;">
+    <div style="display:grid;width:100%;gap:20px">
+      <div style="background:green;width:100%;border-radius:5px;">
+      summary
+      </div>
+      <div style="background:green;width:100%;border-radius:5px;">
+        summary
+      </div>
+    </div>
+    <nav style="background:blue;width:400px;border-radius:5px;">
+      <NuxtLink to="/repositories">repositories</NuxtLink>
+      <NuxtLink to="/readms">readms</NuxtLink>
+      CONTEÚDO NAVBAR-RIGHT
+      <NuxtPage />
+    </nav>
   </div>
 </template>
+
+<style scoped>
+.container {
+  width:1200px;
+  margin: 30px auto 0 auto;
+  background:#fff000;
+  display:flex;
+  gap:20px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}
+</style>

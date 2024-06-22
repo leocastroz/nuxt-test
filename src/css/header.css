@@ -9,7 +9,17 @@ header {
 
 .develop-by-header {
   background-color: #000;
-  color: #ffffff48;
-  text-align: center;
-  padding: 10px 0;
+  color: #ffffffbf;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:16px;
+  background: #0047e144;
+  animation: textFadeInOut 2.5s infinite;
+}
+
+@keyframes textFadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }

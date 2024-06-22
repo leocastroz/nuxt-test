@@ -6,18 +6,20 @@
     <div v-if="error">Error: {{ error.message }}</div>
     <div v-if="userData">
       <div style="display:flex;align-items:center;">
-        <img :src="userData.avatar_url" alt="Avatar" width="150" style="margin:0 15px;"/>
-        <div style="background:red;">
-          <h2>{{ userData.name }}</h2>
-          <p>{{ userData.bio }}</p>
+        <img :src="userData.avatar_url" alt="Avatar" width="150" style="margin:0 15px;border-radius:50%;"/>
+        <div style="background:re;">
+          <h2 class="text-gradient">{{ userData.name }}</h2>
+          <p style="font-size:14px;font-weight:200;color: #878787;">{{ userData.bio }}</p>
+          <p style="font-size:14px;font-weight:200;color: #878787;">{{ userData.location }}</p>
         </div>
       </div>
     </div>
-    <nav>
+    
+    <nav style="background:red;">
       <NuxtLink to="/about">About</NuxtLink>
       <NuxtLink to="/contact">Contact</NuxtLink>
-      <NuxtLink to="/user/123">User 123</NuxtLink>
-      <NuxtLink to="/profile">profile</NuxtLink>
+      <!-- <NuxtLink to="/user/123">User 123</NuxtLink> -->
+      <!-- <NuxtLink to="/profile">profile</NuxtLink> -->
     </nav>
   </div>
 </template>
@@ -46,7 +48,16 @@ watchEffect(() => {
 <style scoped>
 .container {
   width:1200px;
-  margin: -80px auto 0 auto;
+  margin: -120px auto 0 auto;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #d3d3d3, #222222);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:18px;
+  font-weight:700;
+  padding:10px 0;
 }
 
 @media (max-width: 1200px) {
