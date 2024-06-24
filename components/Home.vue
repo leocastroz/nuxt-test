@@ -15,7 +15,7 @@
       </div>
     </div>
     
-    <nav style="background:red;">
+    <nav class="nav-links-menu">
       <NuxtLink to="/about">About</NuxtLink>
       <NuxtLink to="/contact">Contact</NuxtLink>
       <!-- <NuxtLink to="/user/123">User 123</NuxtLink> -->
@@ -58,6 +58,30 @@ watchEffect(() => {
   font-size:18px;
   font-weight:700;
   padding:10px 0;
+}
+
+a {
+  color: #ffffff4d;
+  text-decoration: none;
+}
+
+.router-link-active {
+  color: #fff;
+}
+/*.router-link-active:hover {
+  @apply bg-green-200 font-medium;
+}*/
+
+.nav-links-menu {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  background-color: #161a23;
+  border: 1px solid #ffffff33;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  margin: 15px;
 }
 
 @media (max-width: 1200px) {
