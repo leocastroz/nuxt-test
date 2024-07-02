@@ -5,17 +5,24 @@
     <div v-if="loading">Loading...</div>
     <div v-if="error">Error: {{ error.message }}</div>
     <div v-if="userData">
-      <div style="display:flex;align-items:center;">
-        <img :src="userData.avatar_url" alt="Avatar" width="150" style="margin:0 15px;border-radius:50%;"/>
-        <div style="background:re;">
-          <h2 class="text-gradient">{{ userData.name }}</h2>
-          <p style="font-size:14px;font-weight:200;color: #878787;">{{ userData.bio }}</p>
-          <p style="font-size:14px;font-weight:200;color: #878787;">{{ userData.location }}</p>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="display:flex;align-items:center;width:100%;">
+          <img :src="userData.avatar_url" alt="Avatar" width="150" style="margin:0 15px;border-radius:50%;"/>
+          <div style="background:re;">
+            <h2 class="text-gradient">{{ userData.name }}</h2>
+            <p style="font-size:14px;font-weight:200;color: #878787;">{{ userData.bio }}</p>
+            <p style="font-size:14px;font-weight:200;color: #878787;">{{ userData.location }}</p>
+          </div>
+        </div>
+        
+        <div class="card-yt">
+          CRIAR UM COMPONENTE DE BOTÃO
         </div>
       </div>
     </div>
     
     <nav class="nav-links-menu">
+      <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/about">About</NuxtLink>
       <NuxtLink to="/contact">Contact</NuxtLink>
       <!-- <NuxtLink to="/user/123">User 123</NuxtLink> -->
@@ -61,13 +68,31 @@ watchEffect(() => {
 }
 
 a {
+  background-color: #444444;
+  background-image: linear-gradient(147deg, #444444, #0a0c11 74%);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20%;
   color: #ffffff4d;
   text-decoration: none;
+  transition: background-image 1s ease, box-shadow 1s ease, color 1s ease, .5s ease-out;
+}
+
+a:hover {
+  border-radius: 50%;
+  box-shadow: 0 0 30px 1px #ffffff21;
 }
 
 .router-link-active {
+  background-image: linear-gradient(147deg, #36e4da, #0047e1 74%);
+  box-shadow: 0 0px 30px 1px #79a3ff70;
+  border-radius: 50%;
   color: #fff;
 }
+
 /*.router-link-active:hover {
   @apply bg-green-200 font-medium;
 }*/
@@ -76,12 +101,21 @@ a {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
-  background-color: #161a23;
-  border: 1px solid #ffffff33;
+  /*background-color: #161a23;
+  border: 1px solid #ffffff33;*/
   padding: 10px;
   border-radius: 5px;
   color: #fff;
   margin: 15px;
+}
+
+.card-yt {
+  background-image: linear-gradient(147deg, #161a23, #05050f 74%);
+  width:400px;
+  border: 1px solid #ffffff33;
+  padding: 10px 0;
+  border-radius: 5px;
+  color: #fff;height:100px;
 }
 
 @media (max-width: 1200px) {
