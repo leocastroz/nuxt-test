@@ -1,13 +1,20 @@
-import { defineNuxtPlugin } from '#app'
+import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 import axios from 'axios'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
+  const config = useRuntimeConfig()
+
   const axiosInstance = axios.create({
-    baseURL: process.env.API_BASE_URL,
+    baseURL: config.public.apiUrl,
     headers: {
-      'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+      'Authorization': `Bearer ${config.public.githubToken}`,
       'Accept': 'application/vnd.github.v3+json'
     }
   })
-  nuxtApp.provide('axios', axiosInstance)
+
+  return {
+    provide: {
+      axios: axiosInstance
+    }
+  }
 })
