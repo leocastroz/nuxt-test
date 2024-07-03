@@ -107,7 +107,6 @@ const setVolume = () => {
   }
 };
 
-// Inicia a reprodução automática e configura o volume inicial quando o componente é montado
 onMounted(() => {
   if (audio.value) {
     audio.value.volume = volume.value;
