@@ -2,7 +2,19 @@
 <template>
   <div class="container">
     <!-- <button @click="fetchUserData">Fetch GitHub User Data</button> -->
-    <div v-if="loading">Loading...</div>
+    <div v-if="hasta">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="display:flex;align-items:center;width:100%;">
+          <div class="loading-animation"></div>
+          <div style="display: grid;gap: 10px;">
+           <div class="loading-animation2"></div>
+           <div class="loading-animation3"></div>
+           <div class="loading-animation3"></div>
+          </div>
+        </div>
+        <div class="loading-animation4"></div>
+      </div>
+    </div>
     <div v-if="error">Error: {{ error.message }}</div>
     <div v-if="userData">
       <div style="display:flex;align-items:center;justify-content:space-between;">
@@ -19,9 +31,18 @@
     </div>
     
     <nav class="nav-links-menu">
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/about">About</NuxtLink>
-      <NuxtLink to="/contact">Contact</NuxtLink>
+      <NuxtLink to="/">
+        <img src="../src/images/home.png" alt="Avatar" width="30" style="margin:0 15px;border-radius:10%;"/>
+      </NuxtLink>
+      <NuxtLink to="/experience">
+        <img src="../src/images/toolbox.png" alt="Avatar" width="30" style="margin:0 15px;border-radius:10%;"/>
+      </NuxtLink>
+      <NuxtLink to="/about">
+        <img src="../src/images/profile.png" alt="Avatar" width="30" style="margin:0 15px;border-radius:10%;"/>
+      </NuxtLink>
+      <NuxtLink to="/contact">
+        <img src="../src/images/contact.png" alt="Avatar" width="30" style="margin:0 15px;border-radius:10%;"/>
+      </NuxtLink>
       <!-- <NuxtLink to="/user/123">User 123</NuxtLink> -->
       <!-- <NuxtLink to="/profile">profile</NuxtLink> -->
     </nav>
@@ -37,14 +58,11 @@ const githubStore = useGithubStore();
 const { userData, loading, error } = toRefs(githubStore);
 
 const fetchUserData = () => {
-  console.log('fetchUserData');
+  console.log('fetchUserData ->>>>>>>>>>', githubStore );
   githubStore.fetchGithubUser();
 }
 
-const BuscaEbve = () => {
-  console.log('testeeee')
-}
-
+const hasta = ref(true);
 
 onMounted(() => {
   fetchUserData();
@@ -53,6 +71,10 @@ onMounted(() => {
 watchEffect(() => {
   userData.value = githubStore.userData;
   loading.value = githubStore.loading;
+  if (loading.value === true) {
+    hasta.value = false;
+  }
+  // console.log(loading.value, 'loading')
   error.value = githubStore.error;
 })
 </script>
@@ -87,9 +109,14 @@ a {
   transition: background-image 1s ease, box-shadow 1s ease, color 1s ease, .5s ease-out;
 }
 
+a img {
+  filter: brightness(0.4);
+}
+
 a:hover {
   border-radius: 50%;
   box-shadow: 0 0 30px 1px #ffffff21;
+  filter: brightness(1);
 }
 
 .router-link-active {
@@ -97,6 +124,10 @@ a:hover {
   box-shadow: 0 0px 30px 1px #79a3ff70;
   border-radius: 50%;
   color: #fff;
+}
+
+.router-link-active img {
+  filter: brightness(1);
 }
 
 /*.router-link-active:hover {
@@ -119,9 +150,53 @@ a:hover {
   background-image: linear-gradient(147deg, #161a23, #05050f 74%);
   width:400px;
   border: 1px solid #ffffff33;
-  padding: 10px 0;
   border-radius: 5px;
   color: #fff;height:100px;
+}
+
+.loading-animation {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0px 15px;
+  background-color: #ddd;
+  animation: colorChange 2s infinite;
+}
+
+.loading-animation2 {
+  width: 160px;
+  height: 20px;
+  border-radius: 10%;
+  background-color: #ddd;
+  animation: colorChange 2s infinite;
+}
+
+.loading-animation3 {
+  width: 200px;
+  height: 20px;
+  border-radius: 10%;
+  background-color: #ddd;
+  animation: colorChange 2s infinite;
+}
+
+.loading-animation4 {
+  width: 400px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: #ddd;
+  animation: colorChange 2s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color:#000614;
+  }
+  50% {
+    background-color:#ffffff0a
+  }
+  100% {
+    background-color:#000614;
+  }
 }
 
 @media (max-width: 1200px) {

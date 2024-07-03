@@ -9,6 +9,6 @@ export default defineNuxtConfig({
     }
   },
   devtools: { enabled: true },
-  css: ['~/src/css/default.css'],
+  css: ['~/src/css/default.css','animate.css/animate.min.css'],
   plugins: ['~/plugins/axios.ts', '~/plugins/pinia.ts'],
 })

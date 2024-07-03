@@ -1,10 +1,10 @@
 <template>
   <div class="container" style="color:red;">
     <div style="display:grid;width:100%;gap:20px;">
-      <div style="background-color: #161a23;width:100%;border: 1px solid #ffffff33;padding: 10px 0;border-radius: 5px;color: #fff;">
-      summary
+      <div style="background-color:#0d1320;border: 1px solid #ffffff33;padding: 10px;border-radius: 5px;color: #777777;">
+        Engenheiro de Software e "Desenvolvedor Front-end", apaixonado por tecnologia, atuando na área do desenvolvimento web front-end. Utilizando o framework do "Vue.Js". Atualmente estou cursando Engenharia De Software, estou no 6º semestre.
       </div>
-      <div style="background-color: #161a23;width:100%;border: 1px solid #ffffff33;padding: 10px 0;border-radius: 5px;color:#fff;display:flex;">
+      <div style="background-color:#0d1320;border: 1px solid #ffffff33;padding: 10px;border-radius: 5px;color:#fff;display:flex;">
         <span class="html">HTML</span>
         <span class="css">CSS</span>
         <span class="php">PHP</span>
