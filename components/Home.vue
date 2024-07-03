@@ -14,10 +14,7 @@
             <p style="font-size:14px;font-weight:200;color: #878787;">{{ userData.location }}</p>
           </div>
         </div>
-        
-        <div class="card-yt">
-          CRIAR UM COMPONENTE DE BOTÃO
-        </div>
+        <TrackMusic class="card-yt" />
       </div>
     </div>
     
@@ -32,6 +29,7 @@
 </template>
 
 <script setup>
+import TrackMusic from '~/components/TrackMusic.vue'
 import { onMounted, watchEffect, toRefs } from 'vue'
 import { useGithubStore } from '~/stores/githubStore'
 
@@ -39,8 +37,14 @@ const githubStore = useGithubStore();
 const { userData, loading, error } = toRefs(githubStore);
 
 const fetchUserData = () => {
+  console.log('fetchUserData');
   githubStore.fetchGithubUser();
 }
+
+const BuscaEbve = () => {
+  console.log('testeeee')
+}
+
 
 onMounted(() => {
   fetchUserData();
@@ -56,6 +60,8 @@ watchEffect(() => {
 .container {
   width:1200px;
   margin: -120px auto 0 auto;
+  z-index: 99999 !important;
+  position: relative;
 }
 
 .text-gradient {

@@ -8,8 +8,6 @@ header {
 }
 
 .develop-by-header {
-  background-color: #000;
-  color: #ffffffbf;
   height: 100%;
   display: flex;
   justify-content: center;
